@@ -43,27 +43,37 @@ jobs:
             curl -fsS "https://purge.jsdelivr.net/gh/${{ github.repository }}/$file" || true
             curl -fsS "https://purge.jsdelivr.net/gh/${{ github.repository }}@main/$file" || true
           done
-      - name: Smoke test primary CDN playlist
+      - name: Smoke test primary CDN playlist freshness
         run: |
           python - <<'PY'
-          import time, urllib.request
-          url = "https://cdn.jsdelivr.net/gh/${{ github.repository }}/live-curated.txt"
-          last = ""
-          for i in range(8):
+          import hashlib, time, urllib.request
+          raw_url = "https://raw.githubusercontent.com/${{ github.repository }}/main/live-curated.txt"
+          cdn_url = "https://cdn.jsdelivr.net/gh/${{ github.repository }}@main/live-curated.txt"
+          def fetch(url):
+              with urllib.request.urlopen(url + f"?smoke={int(time.time())}", timeout=30) as r:
+                  return r.read()
+          raw = fetch(raw_url)
+          raw_hash = hashlib.sha256(raw).hexdigest()
+          last_hash = ""
+          last_size = 0
+          for i in range(10):
               try:
-                  with urllib.request.urlopen(url + f"?smoke={int(time.time())}", timeout=20) as r:
-                      data = r.read().decode("utf-8", "replace")
-                  last = data[:500]
-                  assert "央视频道,#genre#" in data
-                  assert "影视剧场,#genre#" in data
-                  assert "综合娱乐,#genre#" in data
-                  assert "影视娱乐,#genre#" not in data
-                  assert "其他频道,#genre#" not in data
-                  print("CDN smoke OK", len(data.encode("utf-8")))
+                  cdn = fetch(cdn_url)
+                  last_hash = hashlib.sha256(cdn).hexdigest()
+                  last_size = len(cdn)
+                  text = cdn.decode("utf-8", "replace")
+                  assert last_hash == raw_hash, f"CDN hash {last_hash} != raw hash {raw_hash}"
+                  assert "央视频道,#genre#" in text
+                  assert "影视剧场,#genre#" in text
+                  assert "综合娱乐,#genre#" in text
+                  assert "影视娱乐,#genre#" not in text
+                  assert "其他频道,#genre#" not in text
+                  print("CDN freshness smoke OK", last_size, last_hash)
                   break
               except Exception as e:
-                  print("CDN smoke retry", i + 1, repr(e))
+                  print("CDN freshness smoke retry", i + 1, repr(e), "last_size", last_size, "last_hash", last_hash, "raw_hash", raw_hash)
                   time.sleep(15)
           else:
-              raise SystemExit("CDN smoke failed; first bytes: " + last)
+              raise SystemExit(f"CDN freshness smoke failed: last_size={last_size} last_hash={last_hash} raw_hash={raw_hash}")
           PY
+
