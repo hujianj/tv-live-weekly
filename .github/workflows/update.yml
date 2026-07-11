@@ -1,4 +1,4 @@
-name: Verify and publish IPTV playlist
+﻿name: Verify and publish IPTV playlist
 
 on:
   workflow_dispatch:
@@ -34,3 +34,36 @@ jobs:
         with:
           commit_message: "chore: verify and publish playable IPTV playlist"
           file_pattern: live.txt live-verified.txt live-curated.txt ku9-live.txt live.m3u source-report.md check-report.md curated-report.md sources_status.csv stream_check_results.csv
+      - name: Purge jsDelivr CDN
+        if: always()
+        run: |
+          set -e
+          for file in live-curated.txt live.txt ku9-live.txt live-verified.txt live.m3u curated-report.md source-report.md check-report.md; do
+            echo "Purging $file"
+            curl -fsS "https://purge.jsdelivr.net/gh/${{ github.repository }}/$file" || true
+            curl -fsS "https://purge.jsdelivr.net/gh/${{ github.repository }}@main/$file" || true
+          done
+      - name: Smoke test primary CDN playlist
+        run: |
+          python - <<'PY'
+          import time, urllib.request
+          url = "https://cdn.jsdelivr.net/gh/${{ github.repository }}/live-curated.txt"
+          last = ""
+          for i in range(8):
+              try:
+                  with urllib.request.urlopen(url + f"?smoke={int(time.time())}", timeout=20) as r:
+                      data = r.read().decode("utf-8", "replace")
+                  last = data[:500]
+                  assert "央视频道,#genre#" in data
+                  assert "影视剧场,#genre#" in data
+                  assert "综合娱乐,#genre#" in data
+                  assert "影视娱乐,#genre#" not in data
+                  assert "其他频道,#genre#" not in data
+                  print("CDN smoke OK", len(data.encode("utf-8")))
+                  break
+              except Exception as e:
+                  print("CDN smoke retry", i + 1, repr(e))
+                  time.sleep(15)
+          else:
+              raise SystemExit("CDN smoke failed; first bytes: " + last)
+          PY
