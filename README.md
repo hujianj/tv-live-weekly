@@ -39,3 +39,34 @@ https://hujianj.github.io/tv-live-weekly/live.m3u
 ## 说明
 
 jsDelivr 无版本路径可能出现旧缓存，因此不要使用不带 `@main` 的地址作为电视长期订阅地址。
+
+## 如何新增上游直播源
+
+新增聚合源时，只需要修改这个文件：
+
+```text
+scripts/verify_sources.py
+```
+
+在文件顶部找到：
+
+```python
+SOURCES = [
+    ("zbds_iptv4_txt", "https://live.zbds.top/tv/iptv4.txt"),
+    ...
+]
+```
+
+按同样格式新增一行即可：
+
+```python
+("your_source_name", "https://example.com/your_playlist.m3u"),
+```
+
+规则：
+
+- `your_source_name` 建议只用英文、数字、下划线，不要用中文，避免日志里乱码。
+- 第二个字段填写 TXT / M3U / M3U8 直播源地址。
+- 添加后可以在 GitHub Actions 里手动点 `Run workflow`，或者等每周一自动维护。
+- 如果想让某个新增源优先排序，可以继续修改同文件里的 `source_priority()` 函数。
+- 当前最高优先级是 `zbds_iptv4_txt`，也就是：`https://live.zbds.top/tv/iptv4.txt`。
