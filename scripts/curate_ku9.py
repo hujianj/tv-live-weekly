@@ -96,15 +96,28 @@ def classify(name: str, group: str, source: str) -> str:
     return G_ENT
 
 
+def source_priority(source: str, url: str = '') -> int:
+    """Lower is better. Prefer zbds IPv4 TXT, then other zbds IPv4, then other IPv4."""
+    src = (source or '').lower()
+    u = (url or '').lower()
+    if 'zbds_iptv4_txt' in src or 'live.zbds.top/tv/iptv4.txt' in u:
+        return -200
+    if 'zbds_iptv4_m3u' in src or 'live.zbds.top/tv/iptv4.m3u' in u:
+        return -150
+    if src.startswith('zbds_') or 'live.zbds.top' in u:
+        return -80
+    if 'ipv4' in src:
+        return -30
+    return 0
+
+
 def url_score(url: str, source: str):
-    s = 0
+    s = source_priority(source, url)
     if url.startswith('http://'):
         s -= 20
-    if 'IPv4' in source or 'IPV4' in source:
-        s -= 10
     if 'epg.pw' in url:
         s += 20
-    if '[' in url or 'IPv6' in source or 'IPV6' in source:
+    if '[' in url or 'ipv6' in (source or '').lower():
         s += 20
     if 'migu' in url.lower():
         s += 5
