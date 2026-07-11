@@ -47,22 +47,23 @@ jobs:
         run: |
           python - <<'PY'
           import hashlib, time, urllib.request
-          raw_url = "https://raw.githubusercontent.com/${{ github.repository }}/main/live-curated.txt"
+          from pathlib import Path
           cdn_url = "https://cdn.jsdelivr.net/gh/${{ github.repository }}@main/live-curated.txt"
+          expected = Path("live-curated.txt").read_bytes()
+          expected_hash = hashlib.sha256(expected).hexdigest()
+          expected_size = len(expected)
           def fetch(url):
               with urllib.request.urlopen(url + f"?smoke={int(time.time())}", timeout=30) as r:
                   return r.read()
-          raw = fetch(raw_url)
-          raw_hash = hashlib.sha256(raw).hexdigest()
           last_hash = ""
           last_size = 0
-          for i in range(10):
+          for i in range(20):
               try:
                   cdn = fetch(cdn_url)
                   last_hash = hashlib.sha256(cdn).hexdigest()
                   last_size = len(cdn)
                   text = cdn.decode("utf-8", "replace")
-                  assert last_hash == raw_hash, f"CDN hash {last_hash} != raw hash {raw_hash}"
+                  assert last_hash == expected_hash, f"CDN hash {last_hash} != local hash {expected_hash}"
                   assert "央视频道,#genre#" in text
                   assert "影视剧场,#genre#" in text
                   assert "综合娱乐,#genre#" in text
@@ -71,9 +72,10 @@ jobs:
                   print("CDN freshness smoke OK", last_size, last_hash)
                   break
               except Exception as e:
-                  print("CDN freshness smoke retry", i + 1, repr(e), "last_size", last_size, "last_hash", last_hash, "raw_hash", raw_hash)
+                  print("CDN freshness smoke retry", i + 1, repr(e), "last_size", last_size, "last_hash", last_hash, "expected_size", expected_size, "expected_hash", expected_hash)
                   time.sleep(15)
           else:
-              raise SystemExit(f"CDN freshness smoke failed: last_size={last_size} last_hash={last_hash} raw_hash={raw_hash}")
+              raise SystemExit(f"CDN freshness smoke failed: last_size={last_size} last_hash={last_hash} expected_size={expected_size} expected_hash={expected_hash}")
           PY
+
 
