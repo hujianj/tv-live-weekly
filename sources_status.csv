@@ -1,38 +1,38 @@
 name,url,fetch_ok,bytes,parsed,error
-BurningC4,https://raw.githubusercontent.com/BurningC4/Chinese-IPTV/master/TV-IPV4.m3u,True,8021,58,
-epg??,https://epg.pw/test_channels_macau.m3u,True,6134,19,
-epg????,https://epg.pw/test_channels_malaysia.m3u,True,20137,62,
-epg??,https://epg.pw/test_channels_taiwan.m3u,True,92455,295,
-epg???,https://epg.pw/test_channels_singapore.m3u,True,11163,36,
-epg??,https://epg.pw/test_channels_hong_kong.m3u,True,29383,92,
-??AI??TXT,https://raw.githubusercontent.com/PizazzGY/TV/master/output/user_result.txt,False,0,0,<HTTPError 404: 'Not Found'>
-iptv-org??,https://iptv-org.github.io/iptv/countries/tw.m3u,True,4354,23,
-??AI??M3U,https://raw.githubusercontent.com/PizazzGY/TV/master/output/user_result.m3u,False,0,0,<HTTPError 404: 'Not Found'>
-YueChan,https://raw.githubusercontent.com/YueChan/Live/main/IPTV.m3u,True,36497,0,
-Kimentanm,https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u,True,21946,120,
-???,https://raw.githubusercontent.com/vamoschuck/TV/main/M3U,True,147124,789,
-??IPTV,https://develop202.github.io/migu_video/interface.txt,True,74152,287,
-YanG??,https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u,True,29341,129,
-myIPTV IPv6,https://raw.githubusercontent.com/suxuang/myIPTV/refs/heads/main/ipv6.m3u,True,200521,862,
-epg??,https://epg.pw/test_channels.m3u,True,1374646,4358,
-fanmingming IPv6,https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u,True,25215,82,
-Guovin IPv4,https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/ipv4/result.m3u,True,84441,377,
-fanmingming??,https://live.fanmingming.cn/tv/m3u/ipv6.m3u,True,25215,82,
-iptv-org??,https://iptv-org.github.io/iptv/index.m3u,True,2866584,13354,
-myIPTV IPv4,https://raw.githubusercontent.com/suxuang/myIPTV/refs/heads/main/ipv4.m3u,True,268671,1224,
-Guovin??,https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u,True,449708,1799,
-????IPV6 TXT,https://live.zbds.top/tv/iptv6.txt,True,268,2,
-BigBigGrandG,https://raw.githubusercontent.com/BigBigGrandG/IPTV-URL/release/Gather.m3u,True,329793,1955,
-Free-TV??,https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8,True,530377,1928,
-Guovin IPv6,https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/ipv6/result.m3u,True,433389,1685,
-????IPV4,https://live.zbds.top/tv/iptv4.txt,True,44516,558,
-JackTV??,https://php.946985.filegear-sg.me/jackTV.m3u,False,0,0,<HTTPError 403: 'Forbidden'>
-????IPV6 M3U,https://live.zbds.top/tv/iptv6.m3u,True,282,1,
-????IPV4 M3U,https://live.zbds.top/tv/iptv4.m3u,True,99594,443,
-gitee dsy,https://gitee.com/xxy002/zhiboyuan/raw/master/dsy,False,0,0,<HTTPError 404: 'Not Found'>
-?????,https://www.iyouhun.com/tv/zb,True,317880,3877,
-YY??,https://gongdian.top/tv/Mursor/yylunbo.m3u,True,124828,591,
-??????,https://gongdian.top/tv/Mursor/bililive.m3u,True,155209,788,
-?????,https://live.freetv.top/douyuyqk.m3u,False,0,0,TimeoutError('The read operation timed out')
-?????,https://live.freetv.top/huyayqk.m3u,False,0,0,TimeoutError('The read operation timed out')
-utako??,https://web.utako.moe/jp.m3u,False,0,0,URLError(TimeoutError('timed out'))
+pizazz_ai_txt,https://raw.githubusercontent.com/PizazzGY/TV/master/output/user_result.txt,False,0,0,<HTTPError 404: 'Not Found'>
+pizazz_ai_m3u,https://raw.githubusercontent.com/PizazzGY/TV/master/output/user_result.m3u,False,0,0,<HTTPError 404: 'Not Found'>
+migu_interface,https://develop202.github.io/migu_video/interface.txt,True,65604,281,
+guovin_ipv4,https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/ipv4/result.m3u,True,84441,377,
+guovin_ipv6,https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/ipv6/result.m3u,True,433389,1685,
+epg_sg,https://epg.pw/test_channels_singapore.m3u,True,11163,36,
+burningc4_ipv4,https://raw.githubusercontent.com/BurningC4/Chinese-IPTV/master/TV-IPV4.m3u,True,8021,58,
+kimentanm_aptv,https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u,True,21946,120,
+yuechan_live,https://raw.githubusercontent.com/YueChan/Live/main/IPTV.m3u,True,36497,0,
+epg_my,https://epg.pw/test_channels_malaysia.m3u,True,20137,62,
+iptv_org_tw,https://iptv-org.github.io/iptv/countries/tw.m3u,True,4354,23,
+fanmingming_ipv6_raw,https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u,True,25215,82,
+yang_gather,https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u,True,29341,129,
+suxuang_ipv4,https://raw.githubusercontent.com/suxuang/myIPTV/refs/heads/main/ipv4.m3u,True,268671,1224,
+fanmingming_ipv6_mirror,https://live.fanmingming.cn/tv/m3u/ipv6.m3u,True,25215,82,
+vamoschuck_m3u,https://raw.githubusercontent.com/vamoschuck/TV/main/M3U,True,147124,789,
+suxuang_ipv6,https://raw.githubusercontent.com/suxuang/myIPTV/refs/heads/main/ipv6.m3u,True,200521,862,
+free_tv_world,https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8,True,530377,1928,
+epg_hk,https://epg.pw/test_channels_hong_kong.m3u,True,29383,92,
+bigbiggrandg_gather,https://raw.githubusercontent.com/BigBigGrandG/IPTV-URL/release/Gather.m3u,True,329793,1955,
+epg_mo,https://epg.pw/test_channels_macau.m3u,True,6134,19,
+guovin_all,https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u,True,449708,1799,
+epg_tw,https://epg.pw/test_channels_taiwan.m3u,True,92146,294,
+iptv_org_all,https://iptv-org.github.io/iptv/index.m3u,True,2866584,13354,
+epg_cn,https://epg.pw/test_channels.m3u,True,1377327,4366,
+zbds_iptv6_txt,https://live.zbds.top/tv/iptv6.txt,True,268,2,
+jacktv_oversea,https://php.946985.filegear-sg.me/jackTV.m3u,False,0,0,<HTTPError 403: 'Forbidden'>
+zbds_iptv4_txt,https://live.zbds.top/tv/iptv4.txt,True,44516,558,
+zbds_iptv6_m3u,https://live.zbds.top/tv/iptv6.m3u,True,282,1,
+zbds_iptv4_m3u,https://live.zbds.top/tv/iptv4.m3u,True,99594,443,
+gitee_dsy,https://gitee.com/xxy002/zhiboyuan/raw/master/dsy,False,0,0,<HTTPError 404: 'Not Found'>
+iyouhun_zb,https://www.iyouhun.com/tv/zb,True,317880,3877,
+freetv_huya,https://live.freetv.top/huyayqk.m3u,False,0,0,<HTTPError 504: 'Gateway Timeout'>
+mursor_bililive,https://gongdian.top/tv/Mursor/bililive.m3u,True,250020,1271,
+mursor_yy,https://gongdian.top/tv/Mursor/yylunbo.m3u,True,124828,591,
+freetv_douyu,https://live.freetv.top/douyuyqk.m3u,False,0,0,TimeoutError('The read operation timed out')
+utako_jp,https://web.utako.moe/jp.m3u,False,0,0,URLError(TimeoutError('timed out'))
