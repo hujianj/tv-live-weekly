@@ -1,0 +1,36 @@
+name: Verify and publish IPTV playlist
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Weekly, Beijing time Monday 04:20. Full stream verification is network-heavy.
+    - cron: "20 20 * * 0"
+  push:
+    paths:
+      - "scripts/verify_sources.py"
+      - "scripts/curate_ku9.py"
+      - ".github/workflows/update.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify all configured IPTV sources
+        run: python scripts/verify_sources.py
+      - name: Curate Ku9 channel order
+        run: python scripts/curate_ku9.py
+      - name: Commit verified playlist
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: verify and publish playable IPTV playlist"
+          file_pattern: live.txt live-verified.txt live-curated.txt ku9-live.txt live.m3u source-report.md check-report.md curated-report.md sources_status.csv stream_check_results.csv
