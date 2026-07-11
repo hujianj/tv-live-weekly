@@ -35,43 +35,45 @@ MAX_VALID_PER_NAME = 5
 UA = "Player"
 
 SOURCES = [
-    ("?????", "https://www.iyouhun.com/tv/zb"),
-    ("????IPV4", "https://live.zbds.top/tv/iptv4.txt"),
-    ("??IPTV", "https://develop202.github.io/migu_video/interface.txt"),
-    ("??AI??TXT", "https://raw.githubusercontent.com/PizazzGY/TV/master/output/user_result.txt"),
-    ("??AI??M3U", "https://raw.githubusercontent.com/PizazzGY/TV/master/output/user_result.m3u"),
-    ("Guovin??", "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u"),
-    ("Guovin IPv4", "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/ipv4/result.m3u"),
-    ("Guovin IPv6", "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/ipv6/result.m3u"),
-    ("myIPTV IPv4", "https://raw.githubusercontent.com/suxuang/myIPTV/refs/heads/main/ipv4.m3u"),
-    ("myIPTV IPv6", "https://raw.githubusercontent.com/suxuang/myIPTV/refs/heads/main/ipv6.m3u"),
-    ("????IPV4 M3U", "https://live.zbds.top/tv/iptv4.m3u"),
-    ("BurningC4", "https://raw.githubusercontent.com/BurningC4/Chinese-IPTV/master/TV-IPV4.m3u"),
-    ("???", "https://raw.githubusercontent.com/vamoschuck/TV/main/M3U"),
-    ("????IPV6 TXT", "https://live.zbds.top/tv/iptv6.txt"),
-    ("????IPV6 M3U", "https://live.zbds.top/tv/iptv6.m3u"),
-    ("fanmingming IPv6", "https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u"),
-    ("fanmingming??", "https://live.fanmingming.cn/tv/m3u/ipv6.m3u"),
-    ("YueChan", "https://raw.githubusercontent.com/YueChan/Live/main/IPTV.m3u"),
-    ("gitee dsy", "https://gitee.com/xxy002/zhiboyuan/raw/master/dsy"),
-    ("Kimentanm", "https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u"),
-    ("BigBigGrandG", "https://raw.githubusercontent.com/BigBigGrandG/IPTV-URL/release/Gather.m3u"),
-    ("YanG??", "https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u"),
-    ("JackTV??", "https://php.946985.filegear-sg.me/jackTV.m3u"),
-    ("iptv-org??", "https://iptv-org.github.io/iptv/index.m3u"),
-    ("utako??", "https://web.utako.moe/jp.m3u"),
-    ("epg??", "https://epg.pw/test_channels.m3u"),
-    ("epg??", "https://epg.pw/test_channels_hong_kong.m3u"),
-    ("epg??", "https://epg.pw/test_channels_macau.m3u"),
-    ("epg??", "https://epg.pw/test_channels_taiwan.m3u"),
-    ("iptv-org??", "https://iptv-org.github.io/iptv/countries/tw.m3u"),
-    ("epg???", "https://epg.pw/test_channels_singapore.m3u"),
-    ("epg????", "https://epg.pw/test_channels_malaysia.m3u"),
-    ("Free-TV??", "https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8"),
-    ("?????", "https://live.freetv.top/huyayqk.m3u"),
-    ("?????", "https://live.freetv.top/douyuyqk.m3u"),
-    ("YY??", "https://gongdian.top/tv/Mursor/yylunbo.m3u"),
-    ("??????", "https://gongdian.top/tv/Mursor/bililive.m3u"),
+    # Add or remove upstream playlists here. Format: (stable_source_name, playlist_url)
+    # Stable source names are used by sorting rules, reports, and priority logic.
+    ("iyouhun_zb", "https://www.iyouhun.com/tv/zb"),
+    ("zbds_iptv4_txt", "https://live.zbds.top/tv/iptv4.txt"),
+    ("migu_interface", "https://develop202.github.io/migu_video/interface.txt"),
+    ("pizazz_ai_txt", "https://raw.githubusercontent.com/PizazzGY/TV/master/output/user_result.txt"),
+    ("pizazz_ai_m3u", "https://raw.githubusercontent.com/PizazzGY/TV/master/output/user_result.m3u"),
+    ("guovin_all", "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u"),
+    ("guovin_ipv4", "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/ipv4/result.m3u"),
+    ("guovin_ipv6", "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/ipv6/result.m3u"),
+    ("suxuang_ipv4", "https://raw.githubusercontent.com/suxuang/myIPTV/refs/heads/main/ipv4.m3u"),
+    ("suxuang_ipv6", "https://raw.githubusercontent.com/suxuang/myIPTV/refs/heads/main/ipv6.m3u"),
+    ("zbds_iptv4_m3u", "https://live.zbds.top/tv/iptv4.m3u"),
+    ("burningc4_ipv4", "https://raw.githubusercontent.com/BurningC4/Chinese-IPTV/master/TV-IPV4.m3u"),
+    ("vamoschuck_m3u", "https://raw.githubusercontent.com/vamoschuck/TV/main/M3U"),
+    ("zbds_iptv6_txt", "https://live.zbds.top/tv/iptv6.txt"),
+    ("zbds_iptv6_m3u", "https://live.zbds.top/tv/iptv6.m3u"),
+    ("fanmingming_ipv6_raw", "https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u"),
+    ("fanmingming_ipv6_mirror", "https://live.fanmingming.cn/tv/m3u/ipv6.m3u"),
+    ("yuechan_live", "https://raw.githubusercontent.com/YueChan/Live/main/IPTV.m3u"),
+    ("gitee_dsy", "https://gitee.com/xxy002/zhiboyuan/raw/master/dsy"),
+    ("kimentanm_aptv", "https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u"),
+    ("bigbiggrandg_gather", "https://raw.githubusercontent.com/BigBigGrandG/IPTV-URL/release/Gather.m3u"),
+    ("yang_gather", "https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u"),
+    ("jacktv_oversea", "https://php.946985.filegear-sg.me/jackTV.m3u"),
+    ("iptv_org_all", "https://iptv-org.github.io/iptv/index.m3u"),
+    ("utako_jp", "https://web.utako.moe/jp.m3u"),
+    ("epg_cn", "https://epg.pw/test_channels.m3u"),
+    ("epg_hk", "https://epg.pw/test_channels_hong_kong.m3u"),
+    ("epg_mo", "https://epg.pw/test_channels_macau.m3u"),
+    ("epg_tw", "https://epg.pw/test_channels_taiwan.m3u"),
+    ("iptv_org_tw", "https://iptv-org.github.io/iptv/countries/tw.m3u"),
+    ("epg_sg", "https://epg.pw/test_channels_singapore.m3u"),
+    ("epg_my", "https://epg.pw/test_channels_malaysia.m3u"),
+    ("free_tv_world", "https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8"),
+    ("freetv_huya", "https://live.freetv.top/huyayqk.m3u"),
+    ("freetv_douyu", "https://live.freetv.top/douyuyqk.m3u"),
+    ("mursor_yy", "https://gongdian.top/tv/Mursor/yylunbo.m3u"),
+    ("mursor_bililive", "https://gongdian.top/tv/Mursor/bililive.m3u"),
 ]
 
 BAD_MARKERS = ("nosignal", "no-signal", "no_signal", "notfound", "404", "offline")
@@ -318,19 +320,32 @@ def check_candidate(cand: Candidate) -> CheckResult:
         return CheckResult(cand, False, repr(e)[:160])
 
 
-def prefer_score(c: Candidate) -> tuple[int, int, str]:
+def source_priority(source: str, url: str = "") -> int:
+    """Lower is better. Prefer zbds IPv4 TXT, then other zbds IPv4, then other IPv4."""
+    s = (source or "").lower()
+    u = (url or "").lower()
+    if "zbds_iptv4_txt" in s or "live.zbds.top/tv/iptv4.txt" in u:
+        return -200
+    if "zbds_iptv4_m3u" in s or "live.zbds.top/tv/iptv4.m3u" in u:
+        return -150
+    if s.startswith("zbds_") or "live.zbds.top" in u:
+        return -80
+    if "ipv4" in s:
+        return -30
+    return 0
+
+
+def prefer_score(c: Candidate) -> tuple[int, int, int, str]:
     u = c.url.lower()
-    # Ku9 ???????? http ipv4 ???? https?IPv6/?? CDN ???
-    score = 0
+    score = source_priority(c.source, c.url)
+    # Ku9/TV boxes usually handle plain HTTP IPv4 IPTV better than IPv6/foreign CDN streams.
     if u.startswith("http://"):
         score -= 20
-    if "live.zbds.top" in c.source or "ipv4" in c.source.lower():
-        score -= 10
     if "epg.pw" in u:
         score += 15
     if is_ipv6_url(c.url):
         score += 30
-    return (score, len(c.url), c.source)
+    return (score, len(c.url), len(c.source), c.source)
 
 
 def main() -> None:
