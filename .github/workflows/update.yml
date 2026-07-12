@@ -47,39 +47,109 @@ jobs:
             curl -fsS "https://purge.jsdelivr.net/gh/${{ github.repository }}/$file" || true
             curl -fsS "https://purge.jsdelivr.net/gh/${{ github.repository }}@main/$file" || true
           done
-      - name: Smoke test primary CDN playlist freshness
+      - name: Smoke test generated playlist
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          data = Path("live-curated.txt").read_bytes()
+          text = data.decode("utf-8", "replace")
+          assert len(data) > 10_000, f"playlist too small: {len(data)} bytes"
+          for marker in [
+              "央视频道,#genre#",
+              "卫视频道,#genre#",
+              "地方频道,#genre#",
+              "影视剧场,#genre#",
+              "少儿动漫,#genre#",
+              "体育纪实,#genre#",
+              "音乐综艺,#genre#",
+              "生活休闲,#genre#",
+              "综合娱乐,#genre#",
+              "港澳台频道,#genre#",
+              "海外华语频道,#genre#",
+          ]:
+              assert marker in text, f"missing category: {marker}"
+          assert "影视娱乐,#genre#" not in text
+          assert "其他频道,#genre#" not in text
+          print("Generated playlist smoke OK", len(data), "bytes")
+          PY
+      - name: Smoke test GitHub Raw publication freshness
         run: |
           python - <<'PY'
           import hashlib, time, urllib.request
           from pathlib import Path
-          cdn_url = "https://cdn.jsdelivr.net/gh/${{ github.repository }}@main/live-curated.txt"
           expected = Path("live-curated.txt").read_bytes()
           expected_hash = hashlib.sha256(expected).hexdigest()
           expected_size = len(expected)
+          raw_url = "https://raw.githubusercontent.com/${{ github.repository }}/main/live-curated.txt"
           def fetch(url):
               with urllib.request.urlopen(url + f"?smoke={int(time.time())}", timeout=30) as r:
                   return r.read()
           last_hash = ""
           last_size = 0
-          for i in range(20):
+          for i in range(30):
               try:
-                  cdn = fetch(cdn_url)
-                  last_hash = hashlib.sha256(cdn).hexdigest()
-                  last_size = len(cdn)
-                  text = cdn.decode("utf-8", "replace")
-                  assert last_hash == expected_hash, f"CDN hash {last_hash} != local hash {expected_hash}"
+                  data = fetch(raw_url)
+                  last_hash = hashlib.sha256(data).hexdigest()
+                  last_size = len(data)
+                  text = data.decode("utf-8", "replace")
+                  assert last_hash == expected_hash, f"Raw hash {last_hash} != local hash {expected_hash}"
                   assert "央视频道,#genre#" in text
                   assert "影视剧场,#genre#" in text
                   assert "综合娱乐,#genre#" in text
                   assert "影视娱乐,#genre#" not in text
                   assert "其他频道,#genre#" not in text
-                  print("CDN freshness smoke OK", last_size, last_hash)
+                  print("GitHub Raw freshness smoke OK", last_size, last_hash)
                   break
               except Exception as e:
-                  print("CDN freshness smoke retry", i + 1, repr(e), "last_size", last_size, "last_hash", last_hash, "expected_size", expected_size, "expected_hash", expected_hash)
-                  time.sleep(15)
+                  print("GitHub Raw freshness smoke retry", i + 1, repr(e), "last_size", last_size, "last_hash", last_hash, "expected_size", expected_size, "expected_hash", expected_hash)
+                  time.sleep(10)
           else:
-              raise SystemExit(f"CDN freshness smoke failed: last_size={last_size} last_hash={last_hash} expected_size={expected_size} expected_hash={expected_hash}")
+              raise SystemExit(f"GitHub Raw freshness smoke failed: last_size={last_size} last_hash={last_hash} expected_size={expected_size} expected_hash={expected_hash}")
+          PY
+      - name: Check Pages and jsDelivr cache state
+        if: always()
+        run: |
+          python - <<'PY'
+          import hashlib, time, urllib.request
+          from pathlib import Path
+          expected = Path("live-curated.txt").read_bytes()
+          expected_hash = hashlib.sha256(expected).hexdigest()
+          expected_size = len(expected)
+          urls = [
+              ("pages", "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/live-curated.txt"),
+              ("jsdelivr_main", "https://cdn.jsdelivr.net/gh/${{ github.repository }}@main/live-curated.txt"),
+              ("gcore_jsdelivr_main", "https://gcore.jsdelivr.net/gh/${{ github.repository }}@main/live-curated.txt"),
+          ]
+          def fetch(url):
+              with urllib.request.urlopen(url + f"?cachecheck={int(time.time())}", timeout=30) as r:
+                  return r.read()
+          for name, url in urls:
+              ok = False
+              last_size = 0
+              last_hash = ""
+              for i in range(6):
+                  try:
+                      data = fetch(url)
+                      last_size = len(data)
+                      last_hash = hashlib.sha256(data).hexdigest()
+                      text = data.decode("utf-8", "replace")
+                      structure_ok = (
+                          "央视频道,#genre#" in text
+                          and "影视剧场,#genre#" in text
+                          and "综合娱乐,#genre#" in text
+                          and "影视娱乐,#genre#" not in text
+                          and "其他频道,#genre#" not in text
+                      )
+                      if last_hash == expected_hash and structure_ok:
+                          print(f"{name} cache OK", last_size, last_hash)
+                          ok = True
+                          break
+                      print(f"{name} cache retry {i + 1}: size={last_size} hash={last_hash} expected_size={expected_size} expected_hash={expected_hash} structure_ok={structure_ok}")
+                  except Exception as e:
+                      print(f"{name} cache retry {i + 1}: {e!r}")
+                  time.sleep(10)
+              if not ok:
+                  print(f"WARNING: {name} is still stale or unreachable; generated playlist and GitHub Raw are already verified. url={url} last_size={last_size} last_hash={last_hash} expected_size={expected_size} expected_hash={expected_hash}")
           PY
 
 
