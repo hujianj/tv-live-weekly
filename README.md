@@ -16,12 +16,6 @@ https://hujianj.github.io/tv-live-weekly/live-curated.txt
 https://cdn.jsdelivr.net/gh/hujianj/tv-live-weekly@main/live-curated.txt
 ```
 
-备用 gcore 地址：
-
-```text
-https://gcore.jsdelivr.net/gh/hujianj/tv-live-weekly@main/live-curated.txt
-```
-
 M3U 格式：
 
 ```text
@@ -34,11 +28,15 @@ https://hujianj.github.io/tv-live-weekly/live.m3u
 - 可在 GitHub Actions 手动点击 `Run workflow` 立即运行。
 - 只发布通过真实 HLS/媒体分片验证的可播放源。
 - 按当前电视观看习惯自动分类：央视、卫视、地方、影视剧场、少儿动漫、体育纪实、音乐综艺、生活休闲、综合娱乐、港澳台、海外华语。
-- 自动 purge jsDelivr，并对 CDN `@main` 地址做新鲜度校验。
+- 自动 purge jsDelivr。
+- 自动硬校验本地生成结果和 GitHub Raw 发布结果。
+- 自动检查 GitHub Pages / jsDelivr 缓存状态；CDN 边缘缓存短时滞后只记录告警，不阻断主发布。
 
 ## 说明
 
 jsDelivr 无版本路径可能出现旧缓存，因此不要使用不带 `@main` 的地址作为电视长期订阅地址。
+
+不建议把 `gcore.jsdelivr.net @main` 设为电视长期订阅地址；它的边缘缓存刷新更不稳定。如需临时使用 CDN，优先使用上面的 `cdn.jsdelivr.net @main`，主订阅仍以 GitHub Pages 为准。
 
 ## 如何新增上游直播源
 
