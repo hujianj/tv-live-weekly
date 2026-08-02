@@ -1,83 +1,85 @@
 # IPTV source verification report
 
-Generated: 2026-07-26 21:28:51
-Elapsed: 875.2s
+Generated: 2026-08-02 21:26:55
+Elapsed: 844.6s
 Sources total: 37
 Sources fetched OK: 31
-Parsed candidates: 36470
-Unique candidates: 31946
-Checked candidates: 28529
-Playable channel names: 11606
-Published playable lines: 13178
+Parsed candidates: 34879
+Unique candidates: 30474
+Checked candidates: 26913
+Playable channel names: 12115
+Published playable lines: 13850
 
 ## Source fetch status
 
 | Source | Fetch | Parsed | Bytes | Error |
 |---|---:|---:|---:|---|
 | suxuang_ipv6 | OK | 862 | 200521 |  |
-| pizazz_ai_m3u | FAIL | 0 | 0 | <HTTPError 404: 'Not Found'> |
-| kimentanm_aptv | OK | 120 | 21945 |  |
-| migu_interface | OK | 283 | 62510 |  |
-| epg_hk | OK | 50 | 15982 |  |
-| vamoschuck_m3u | OK | 789 | 147124 |  |
+| utako_jp | FAIL | 0 | 0 | URLError(gaierror(-2, 'Name or service not known')) |
 | pizazz_ai_txt | FAIL | 0 | 0 | <HTTPError 404: 'Not Found'> |
-| bigbiggrandg_gather | OK | 1955 | 329793 |  |
-| burningc4_ipv4 | OK | 58 | 8021 |  |
-| iptv_org_tw | OK | 25 | 4800 |  |
+| pizazz_ai_m3u | FAIL | 0 | 0 | <HTTPError 404: 'Not Found'> |
 | guovin_all | OK | 1807 | 451112 |  |
+| migu_interface | OK | 284 | 59874 |  |
+| burningc4_ipv4 | OK | 58 | 8021 |  |
+| vamoschuck_m3u | OK | 789 | 147124 |  |
 | yang_gather | OK | 129 | 29341 |  |
-| fanmingming_ipv6_mirror | OK | 82 | 25215 |  |
-| fanmingming_ipv6_raw | OK | 82 | 25215 |  |
+| kimentanm_aptv | OK | 120 | 21945 |  |
 | guovin_ipv4 | OK | 411 | 92293 |  |
-| suxuang_ipv4 | OK | 1224 | 268671 |  |
-| epg_my | OK | 29 | 9288 |  |
-| epg_cn | OK | 3061 | 964532 |  |
-| epg_sg | OK | 19 | 5913 |  |
-| yuechan_live | OK | 0 | 36497 |  |
-| epg_tw | OK | 129 | 39694 |  |
-| guovin_ipv6 | OK | 1686 | 433635 |  |
+| iptv_org_tw | OK | 25 | 4800 |  |
+| fanmingming_ipv6_raw | OK | 82 | 25215 |  |
 | epg_mo | OK | 19 | 6134 |  |
+| guovin_ipv6 | OK | 1686 | 433635 |  |
+| yuechan_live | OK | 0 | 36497 |  |
+| bigbiggrandg_gather | OK | 1955 | 329793 |  |
+| suxuang_ipv4 | OK | 1224 | 268671 |  |
+| epg_sg | OK | 14 | 4377 |  |
+| epg_hk | OK | 45 | 14414 |  |
+| epg_my | OK | 21 | 6737 |  |
+| epg_cn | OK | 2602 | 821418 |  |
+| epg_tw | OK | 136 | 41945 |  |
+| fanmingming_ipv6_mirror | OK | 82 | 25215 |  |
+| iptv_org_all | OK | 13473 | 2897884 |  |
 | free_tv_world | OK | 1928 | 530377 |  |
-| jacktv_oversea | FAIL | 0 | 0 | <HTTPError 403: 'Forbidden'> |
-| iptv_org_all | OK | 13630 | 2941963 |  |
 | zbds_iptv6_m3u | OK | 1 | 282 |  |
-| utako_jp | FAIL | 0 | 0 | URLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')) |
+| jacktv_oversea | FAIL | 0 | 0 | <HTTPError 403: 'Forbidden'> |
 | zbds_iptv6_txt | OK | 2 | 268 |  |
-| zbds_iptv4_m3u | OK | 498 | 113620 |  |
-| zbds_iptv4_txt | OK | 645 | 54137 |  |
+| zbds_iptv4_m3u | OK | 444 | 98762 |  |
+| zbds_iptv4_txt | OK | 764 | 61347 |  |
+| mursor_bililive | OK | 304 | 59932 |  |
 | mursor_yy | OK | 591 | 124828 |  |
 | gitee_dsy | FAIL | 0 | 0 | <HTTPError 404: 'Not Found'> |
-| mursor_bililive | OK | 1349 | 265297 |  |
-| iyouhun_zb | OK | 3827 | 309844 |  |
-| freetv_huya | OK | 1179 | 228491 |  |
+| iyouhun_zb | OK | 3837 | 314078 |  |
+| freetv_huya | OK | 1184 | 229492 |  |
 | freetv_douyu | FAIL | 0 | 0 | TimeoutError('The read operation timed out') |
 
 ## Published playable lines by source
 
 | Source | Lines |
 |---|---:|
-| iptv_org_all | 8568 |
-| freetv_huya | 992 |
-| epg_cn | 861 |
-| free_tv_world | 673 |
-| bigbiggrandg_gather | 651 |
-| iyouhun_zb | 415 |
-| guovin_all | 387 |
-| zbds_iptv4_m3u | 185 |
-| suxuang_ipv4 | 177 |
-| migu_interface | 80 |
-| vamoschuck_m3u | 68 |
-| suxuang_ipv6 | 38 |
-| epg_hk | 23 |
-| zbds_iptv4_txt | 16 |
-| epg_tw | 10 |
-| iptv_org_tw | 10 |
-| epg_my | 9 |
+| iptv_org_all | 8623 |
+| freetv_huya | 1033 |
+| epg_cn | 833 |
+| bigbiggrandg_gather | 650 |
+| free_tv_world | 640 |
+| mursor_yy | 544 |
+| guovin_all | 403 |
+| iyouhun_zb | 388 |
+| suxuang_ipv4 | 229 |
+| zbds_iptv4_m3u | 137 |
+| zbds_iptv4_txt | 135 |
+| migu_interface | 73 |
+| vamoschuck_m3u | 61 |
+| suxuang_ipv6 | 37 |
+| epg_hk | 20 |
+| epg_tw | 8 |
+| iptv_org_tw | 8 |
+| epg_sg | 6 |
+| epg_mo | 5 |
+| epg_my | 5 |
 | guovin_ipv6 | 4 |
-| epg_mo | 3 |
-| epg_sg | 2 |
-| fanmingming_ipv6_mirror | 2 |
+| fanmingming_ipv6_raw | 2 |
 | kimentanm_aptv | 2 |
+| mursor_bililive | 2 |
 | zbds_iptv6_m3u | 1 |
 | zbds_iptv6_txt | 1 |
 
@@ -88,6 +90,8 @@ Published playable lines: 13178
 - 央视频道 / CCTV-1 / guovin_all
 - 央视频道 / CCTV-1 / guovin_all
 - 央视频道 / CCTV-1 / guovin_all
+- 央视频道 / CCTV-1 / guovin_all
+- 央视频道 / CCTV-10 / guovin_all
 - 央视频道 / CCTV-10 / guovin_all
 - 央视频道 / CCTV-10 / guovin_all
 - 央视频道 / CCTV-10 / guovin_all
@@ -102,10 +106,10 @@ Published playable lines: 13178
 - 央视频道 / CCTV-12 / guovin_all
 - 央视频道 / CCTV-12 / guovin_all
 - 央视频道 / CCTV-12 / guovin_all
+- 央视频道 / CCTV-12(720p) / iptv_org_all
 - 央视频道 / CCTV-13 / guovin_all
 - 央视频道 / CCTV-13 / guovin_all
 - 央视频道 / CCTV-13 / guovin_ipv6
-- 央视频道 / CCTV-13(1080p) / iptv_org_all
 - 央视频道 / CCTV-14 / guovin_all
 - 央视频道 / CCTV-14 / guovin_all
 - 央视频道 / CCTV-14 / guovin_all
@@ -131,6 +135,7 @@ Published playable lines: 13178
 - 央视频道 / CCTV-3 / guovin_all
 - 央视频道 / CCTV-3 / guovin_all
 - 央视频道 / CCTV-3 / guovin_all
+- 央视频道 / CCTV-3 / guovin_all
 - 央视频道 / CCTV-3(720p) / iptv_org_all
 - 央视频道 / CCTV-4 / guovin_all
 - 央视频道 / CCTV-4 / guovin_all
@@ -147,19 +152,16 @@ Published playable lines: 13178
 - 央视频道 / CCTV-5 / guovin_all
 - 央视频道 / CCTV-5 / guovin_all
 - 央视频道 / CCTV-5+ / guovin_all
+- 央视频道 / CCTV-5+ / guovin_all
 - 央视频道 / CCTV-6 / guovin_all
 - 央视频道 / CCTV-6 / guovin_all
 - 央视频道 / CCTV-6 / guovin_all
+- 央视频道 / CCTV-6 / guovin_all
+- 央视频道 / CCTV-6 / guovin_all
+- 央视频道 / CCTV-6(1080p) / iptv_org_all
+- 央视频道 / CCTV-7 / guovin_all
 - 央视频道 / CCTV-7 / guovin_all
 - 央视频道 / CCTV-7 / guovin_all
 - 央视频道 / CCTV-7 / guovin_all
 - 央视频道 / CCTV-7 / guovin_all
 - 央视频道 / CCTV-7(720p) / iptv_org_all
-- 央视频道 / CCTV-8 / guovin_all
-- 央视频道 / CCTV-8 / guovin_all
-- 央视频道 / CCTV-8 / guovin_all
-- 央视频道 / CCTV-8 / guovin_all
-- 央视频道 / CCTV-8 / guovin_all
-- 央视频道 / CCTV-8(720p) / iptv_org_all
-- 央视频道 / CCTV-8K(1080p) / iptv_org_all
-- 央视频道 / CCTV-9 / guovin_all
