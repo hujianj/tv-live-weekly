@@ -1,53 +1,53 @@
 # IPTV source verification report
 
-Generated: 2026-09-06 22:27:10
-Elapsed: 1066.4s
+Generated: 2026-09-13 22:40:01
+Elapsed: 706.7s
 Sources total: 37
 Sources fetched OK: 28
-Parsed candidates: 27351
-Unique candidates: 23979
-Checked candidates: 22280
-Playable channel names: 9870
-Published playable lines: 10940
+Parsed candidates: 25346
+Unique candidates: 21873
+Checked candidates: 20375
+Playable channel names: 8829
+Published playable lines: 9602
 
 ## Source fetch status
 
 | Source | Fetch | Parsed | Bytes | Error |
 |---|---:|---:|---:|---|
-| kimentanm_aptv | OK | 120 | 21944 |  |
-| pizazz_ai_txt | FAIL | 0 | 0 | <HTTPError 404: 'Not Found'> |
-| iptv_org_tw | OK | 26 | 4949 |  |
 | pizazz_ai_m3u | FAIL | 0 | 0 | <HTTPError 404: 'Not Found'> |
-| epg_my | OK | 20 | 6406 |  |
-| epg_mo | OK | 19 | 6134 |  |
 | migu_interface | OK | 0 | 469 |  |
-| epg_hk | OK | 54 | 17002 |  |
-| epg_sg | OK | 11 | 3507 |  |
-| burningc4_ipv4 | OK | 58 | 8021 |  |
-| epg_tw | OK | 84 | 25337 |  |
-| fanmingming_ipv6_raw | OK | 82 | 25215 |  |
-| yang_gather | OK | 127 | 27353 |  |
-| suxuang_ipv6 | OK | 862 | 200521 |  |
-| yuechan_live | OK | 0 | 36497 |  |
-| vamoschuck_m3u | OK | 789 | 147124 |  |
-| free_tv_world | OK | 2061 | 550929 |  |
 | guovin_ipv4 | OK | 473 | 106329 |  |
-| bigbiggrandg_gather | OK | 1955 | 329793 |  |
-| guovin_all | OK | 1619 | 396412 |  |
+| pizazz_ai_txt | FAIL | 0 | 0 | <HTTPError 404: 'Not Found'> |
+| epg_hk | OK | 45 | 14320 |  |
+| epg_mo | OK | 19 | 6134 |  |
+| suxuang_ipv6 | OK | 862 | 200521 |  |
+| suxuang_ipv4 | OK | 1225 | 268591 |  |
+| epg_sg | OK | 11 | 3458 |  |
+| epg_tw | OK | 79 | 23947 |  |
+| vamoschuck_m3u | OK | 789 | 147124 |  |
+| fanmingming_ipv6_raw | OK | 82 | 25215 |  |
+| yuechan_live | OK | 0 | 36497 |  |
+| yang_gather | OK | 127 | 27353 |  |
+| epg_cn | OK | 2130 | 672881 |  |
+| iptv_org_tw | OK | 26 | 4949 |  |
 | utako_jp | FAIL | 0 | 0 | URLError(gaierror(-2, 'Name or service not known')) |
-| epg_cn | OK | 2322 | 732157 |  |
+| epg_my | OK | 20 | 6413 |  |
+| iptv_org_all | OK | 11038 | 2501355 |  |
+| burningc4_ipv4 | OK | 58 | 8021 |  |
+| free_tv_world | OK | 2073 | 552188 |  |
+| fanmingming_ipv6_mirror | OK | 82 | 25215 |  |
+| kimentanm_aptv | OK | 120 | 21944 |  |
+| guovin_all | OK | 1619 | 396412 |  |
+| bigbiggrandg_gather | OK | 1955 | 329793 |  |
 | guovin_ipv6 | OK | 1303 | 330476 |  |
+| jacktv_oversea | FAIL | 0 | 0 | <HTTPError 403: 'Forbidden'> |
 | mursor_yy | FAIL | 0 | 0 | URLError(gaierror(-5, 'No address associated with hostname')) |
 | mursor_bililive | FAIL | 0 | 0 | URLError(gaierror(-5, 'No address associated with hostname')) |
-| suxuang_ipv4 | OK | 1223 | 268175 |  |
-| iptv_org_all | OK | 12954 | 2812328 |  |
-| fanmingming_ipv6_mirror | OK | 82 | 25215 |  |
-| jacktv_oversea | FAIL | 0 | 0 | <HTTPError 403: 'Forbidden'> |
-| zbds_iptv4_txt | OK | 589 | 48675 |  |
-| zbds_iptv4_m3u | OK | 509 | 115134 |  |
+| zbds_iptv4_txt | OK | 676 | 56335 |  |
 | zbds_iptv6_txt | OK | 2 | 268 |  |
-| zbds_iptv6_m3u | OK | 1 | 282 |  |
 | iyouhun_zb | OK | 6 | 609 |  |
+| zbds_iptv4_m3u | OK | 525 | 118459 |  |
+| zbds_iptv6_m3u | OK | 1 | 282 |  |
 | gitee_dsy | FAIL | 0 | 0 | <HTTPError 404: 'Not Found'> |
 | freetv_douyu | FAIL | 0 | 0 | TimeoutError('The read operation timed out') |
 | freetv_huya | FAIL | 0 | 0 | TimeoutError('The read operation timed out') |
@@ -56,20 +56,20 @@ Published playable lines: 10940
 
 | Source | Lines |
 |---|---:|
-| iptv_org_all | 8157 |
-| free_tv_world | 1028 |
-| bigbiggrandg_gather | 655 |
-| guovin_ipv4 | 360 |
-| zbds_iptv4_txt | 239 |
-| suxuang_ipv4 | 203 |
-| guovin_all | 165 |
-| vamoschuck_m3u | 72 |
-| suxuang_ipv6 | 32 |
+| iptv_org_all | 6912 |
+| free_tv_world | 1014 |
+| bigbiggrandg_gather | 652 |
+| guovin_ipv4 | 357 |
+| suxuang_ipv4 | 227 |
+| zbds_iptv4_txt | 211 |
+| guovin_all | 129 |
+| vamoschuck_m3u | 49 |
+| suxuang_ipv6 | 30 |
 | iptv_org_tw | 9 |
-| fanmingming_ipv6_raw | 8 |
 | iyouhun_zb | 5 |
-| kimentanm_aptv | 4 |
+| fanmingming_ipv6_raw | 3 |
 | guovin_ipv6 | 3 |
+| kimentanm_aptv | 1 |
 
 ## First 80 published channels
 
@@ -122,7 +122,6 @@ Published playable lines: 10940
 - 央视频道 / CCTV-15 / guovin_ipv4
 - 央视频道 / CCTV-15 / guovin_ipv4
 - 央视频道 / CCTV-15 / guovin_ipv4
-- 央视频道 / CCTV-15(1080p) / iptv_org_all
 - 央视频道 / CCTV-15音乐 / free_tv_world
 - 央视频道 / CCTV-16 / guovin_ipv4
 - 央视频道 / CCTV-16 / guovin_ipv4
@@ -149,6 +148,7 @@ Published playable lines: 10940
 - 央视频道 / CCTV-3 / guovin_ipv4
 - 央视频道 / CCTV-3(720p) / iptv_org_all
 - 央视频道 / CCTV-3综艺 / free_tv_world
+- 央视频道 / CCTV-4 / guovin_ipv4
 - 央视频道 / CCTV-4 / guovin_ipv4
 - 央视频道 / CCTV-4 / guovin_ipv4
 - 央视频道 / CCTV-4 / guovin_ipv4
