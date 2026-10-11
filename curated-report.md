@@ -1,19 +1,19 @@
 # Curated Ku9 playlist report
 
-Published lines: 2070
-Channel names: 1708
+Published lines: 1602
+Channel names: 1307
 
 ## Groups
-- 央视频道: 115
-- 卫视频道: 143
-- 地方频道: 306
-- 影视剧场: 165
-- 少儿动漫: 14
-- 体育纪实: 50
-- 音乐综艺: 46
+- 央视频道: 114
+- 卫视频道: 85
+- 地方频道: 298
+- 影视剧场: 99
+- 少儿动漫: 5
+- 体育纪实: 40
+- 音乐综艺: 35
 - 生活休闲: 138
-- 综合娱乐: 971
-- 港澳台频道: 122
+- 综合娱乐: 681
+- 港澳台频道: 107
 
 ## Rules
 - CCTV sorted as CCTV-1, CCTV-2, CCTV-3...
