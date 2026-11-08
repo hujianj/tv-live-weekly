@@ -1,38 +1,38 @@
 name,url,fetch_ok,bytes,parsed,error
-yang_gather,https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u,True,26227,123,
-kimentanm_aptv,https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u,True,21944,120,
-epg_tw,https://epg.pw/test_channels_taiwan.m3u,True,17887,58,
-vamoschuck_m3u,https://raw.githubusercontent.com/vamoschuck/TV/main/M3U,True,147124,789,
-epg_hk,https://epg.pw/test_channels_hong_kong.m3u,True,7584,24,
-yuechan_live,https://raw.githubusercontent.com/YueChan/Live/main/IPTV.m3u,True,33963,0,
-migu_interface,https://develop202.github.io/migu_video/interface.txt,True,469,0,
-fanmingming_ipv6_raw,https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u,True,25215,82,
-iptv_org_tw,https://iptv-org.github.io/iptv/countries/tw.m3u,True,6079,33,
-mursor_yy,https://gongdian.top/tv/Mursor/yylunbo.m3u,False,0,0,"URLError(gaierror(-5, 'No address associated with hostname'))"
-mursor_bililive,https://gongdian.top/tv/Mursor/bililive.m3u,False,0,0,"URLError(gaierror(-5, 'No address associated with hostname'))"
-pizazz_ai_txt,https://raw.githubusercontent.com/PizazzGY/TV/master/output/user_result.txt,False,0,0,<HTTPError 404: 'Not Found'>
-epg_mo,https://epg.pw/test_channels_macau.m3u,True,6134,19,
-epg_sg,https://epg.pw/test_channels_singapore.m3u,True,2511,8,
-pizazz_ai_m3u,https://raw.githubusercontent.com/PizazzGY/TV/master/output/user_result.m3u,False,0,0,<HTTPError 404: 'Not Found'>
-epg_my,https://epg.pw/test_channels_malaysia.m3u,True,3218,10,
-iptv_org_all,https://iptv-org.github.io/iptv/index.m3u,True,2597563,11385,
-guovin_all,https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u,True,396412,1619,
-guovin_ipv4,https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/ipv4/result.m3u,True,106329,473,
-epg_cn,https://epg.pw/test_channels.m3u,True,355724,1127,
-fanmingming_ipv6_mirror,https://live.fanmingming.cn/tv/m3u/ipv6.m3u,True,25215,82,
-zbds_iptv4_txt,https://live.zbds.top/tv/iptv4.txt,True,25524,307,
-suxuang_ipv6,https://raw.githubusercontent.com/suxuang/myIPTV/refs/heads/main/ipv6.m3u,True,200521,862,
 utako_jp,https://web.utako.moe/jp.m3u,False,0,0,"URLError(gaierror(-2, 'Name or service not known'))"
-guovin_ipv6,https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/ipv6/result.m3u,True,330476,1303,
+pizazz_ai_m3u,https://raw.githubusercontent.com/PizazzGY/TV/master/output/user_result.m3u,False,0,0,<HTTPError 404: 'Not Found'>
+epg_hk,https://epg.pw/test_channels_hong_kong.m3u,True,7639,24,
+pizazz_ai_txt,https://raw.githubusercontent.com/PizazzGY/TV/master/output/user_result.txt,False,0,0,<HTTPError 404: 'Not Found'>
+epg_my,https://epg.pw/test_channels_malaysia.m3u,True,4458,14,
+epg_mo,https://epg.pw/test_channels_macau.m3u,True,6134,19,
+epg_tw,https://epg.pw/test_channels_taiwan.m3u,True,16836,55,
+yuechan_live,https://raw.githubusercontent.com/YueChan/Live/main/IPTV.m3u,True,33963,0,
+epg_sg,https://epg.pw/test_channels_singapore.m3u,True,2243,7,
 burningc4_ipv4,https://raw.githubusercontent.com/BurningC4/Chinese-IPTV/master/TV-IPV4.m3u,True,8021,58,
-free_tv_world,https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8,True,542812,2046,
+fanmingming_ipv6_raw,https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u,True,25215,82,
 suxuang_ipv4,https://raw.githubusercontent.com/suxuang/myIPTV/refs/heads/main/ipv4.m3u,True,268591,1225,
-zbds_iptv4_m3u,https://live.zbds.top/tv/iptv4.m3u,True,50201,225,
+suxuang_ipv6,https://raw.githubusercontent.com/suxuang/myIPTV/refs/heads/main/ipv6.m3u,True,200521,862,
+kimentanm_aptv,https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u,True,21971,120,
+epg_cn,https://epg.pw/test_channels.m3u,True,412657,1313,
+bigbiggrandg_gather,https://raw.githubusercontent.com/BigBigGrandG/IPTV-URL/release/Gather.m3u,True,329793,1955,
+vamoschuck_m3u,https://raw.githubusercontent.com/vamoschuck/TV/main/M3U,True,147124,789,
+free_tv_world,https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8,True,588585,2196,
+migu_interface,https://develop202.github.io/migu_video/interface.txt,True,469,0,
+guovin_ipv4,https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/ipv4/result.m3u,True,106329,473,
+iptv_org_tw,https://iptv-org.github.io/iptv/countries/tw.m3u,True,6211,34,
 zbds_iptv6_m3u,https://live.zbds.top/tv/iptv6.m3u,True,282,1,
 zbds_iptv6_txt,https://live.zbds.top/tv/iptv6.txt,True,268,2,
-bigbiggrandg_gather,https://raw.githubusercontent.com/BigBigGrandG/IPTV-URL/release/Gather.m3u,True,329793,1955,
-gitee_dsy,https://gitee.com/xxy002/zhiboyuan/raw/master/dsy,False,0,0,<HTTPError 404: 'Not Found'>
+zbds_iptv4_m3u,https://live.zbds.top/tv/iptv4.m3u,True,96378,431,
+fanmingming_ipv6_mirror,https://live.fanmingming.cn/tv/m3u/ipv6.m3u,True,25215,82,
+iptv_org_all,https://iptv-org.github.io/iptv/index.m3u,True,2637721,11476,
+yang_gather,https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u,True,26227,123,
+guovin_ipv6,https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/ipv6/result.m3u,True,330476,1303,
+guovin_all,https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u,True,396412,1619,
+mursor_yy,https://gongdian.top/tv/Mursor/yylunbo.m3u,False,0,0,"URLError(gaierror(-5, 'No address associated with hostname'))"
+mursor_bililive,https://gongdian.top/tv/Mursor/bililive.m3u,False,0,0,"URLError(gaierror(-5, 'No address associated with hostname'))"
+zbds_iptv4_txt,https://live.zbds.top/tv/iptv4.txt,True,47336,558,
 jacktv_oversea,https://php.946985.filegear-sg.me/jackTV.m3u,True,59708,211,
-freetv_huya,https://live.freetv.top/huyayqk.m3u,False,0,0,TimeoutError('The read operation timed out')
-freetv_douyu,https://live.freetv.top/douyuyqk.m3u,False,0,0,TimeoutError('The read operation timed out')
-iyouhun_zb,https://www.iyouhun.com/tv/zb,True,506465,7076,
+iyouhun_zb,https://www.iyouhun.com/tv/zb,True,506558,7075,
+gitee_dsy,https://gitee.com/xxy002/zhiboyuan/raw/master/dsy,False,0,0,<HTTPError 404: 'Not Found'>
+freetv_douyu,https://live.freetv.top/douyuyqk.m3u,True,174130,917,
+freetv_huya,https://live.freetv.top/huyayqk.m3u,True,206349,1068,
